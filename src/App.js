@@ -1,6 +1,6 @@
-import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import {Typography} from '@material-ui/core'; 
-import {Text,Grid, Row, ItemOne, ItemTwo, Message, ItemThree, Title, SubTitle, Info, Atag, Simg, CRow} from './styles.js';
+import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import {Typography, Button} from '@material-ui/core'; 
+import {Text,Grid, Row, ItemOne, ItemTwo, Message, ItemThree, Title, SubTitle, Info, Atag, Simg, CRow, preset} from './styles.js';
 // import NavBar from './components/NavBar'
 // import Grid from './components/Grid'
 // import Footer from './components/Footer'
@@ -14,17 +14,17 @@ import './App.css';
 // import HttpIcon from '@material-ui/icons/Http';
 import mug from './images/mug.png';
 import band from './images/Band.png';
-import santa from './images/santa.jpg';
+import mam from './images/mam.jpg';
 import curry from './images/curry.png';
-import cn from './images/cn.jpg';
+import cam from './images/panel.jpg';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
-      main:"#e6e7e9",
+      main: preset.color.main,
     },
     secondary: {
-      main:"#0000FF",
+      main: preset.color.main,
     },
   },
   typography: {
@@ -69,39 +69,35 @@ function App() {
   const classes = styles(); 
   const text = [
     "Mug Fundraiser",
-    "IMs",
     "CN Practices",
-    "Secret Tomo",
-    "TNTs Shoutouts",
+    "Nikkei Professionals RSVP",
+    "Mammoth Sign up Form",
     "General Meeting & Afterevent"
   ];
   const info = [
     [
-      "•  If you are interested in purchasing a Tomo mug, we are selling them for $10",
-      "•  Comes with a sticker and wristband!"
+      "•  Mugs are still available! They are $10 and come with a sticker and wristband!",
+      "•  Please contact Eadan if you are interested in buying one!"
     ],
     [
-      "•  Women’s volleyball: Wed, 9:30 at arc main court",
-      "•  Men’s volleyball: Wed, 7:30 and 8:30 at arc main court (Please come cheer for the 7:30 game because we need a big cheering squad)"
+      "•  Modern 2 - Monday 7:30-9PM Passcode is 848358",
+      "•  Skit - Wednesday 6-10PM Passcode is 986015",
+      "•  Odori - Wednesday 5-6:30PM Passcode is 253288",
+      "•  Tones: TBD",
+      "Buttons below for links :)"
     ],
     [
-      "•  Skit: Wed from 6-10pm at HH 232",
-      "•  Modern: Mon from 7:30-9pm at SSH",
-      "•  Tones: Mon from 9-10pm at SSLH 100",
-      "•  Odori: Wed from 5-6:20 at HH 230"
-    ],
-    [
-      "•  Like Secret Santa but better 🎅",
+      "•  Deadline is Jan 26",
       "•  Sign up if you are interested!",
     ],
     [
-      "•  Due Nov 16 @ 11:59pm",
-      "•  Mandatory for Cabinet and Unkies",
-      "•  Send to tomonohistorian@gmail.com"
+      "•  Mammoth Sign up form is coming out Saturday Jan 22!",
+      "•  Spots are limited to the first 50 sign ups but there will be a waitlist"
     ],
     [
-      "•  6pm on Thursday at Howard Schneiderman Lecture Hall 100A (HSLH 100A)",
-      "•  Aftwards => CURRY NIGHT 🍛"
+      "•  6 PM on Thursday through zoom",
+      "•  Afterevent: Speed Friending",
+      "•  Wanna meet new friends from Tomo? Join us this Thursday for our afterevent!"
     ]
 
   ]
@@ -118,30 +114,23 @@ function App() {
       display: "flex",
       flexDirection: "column",
       alignItems: "stretch",
-      backgroundColor: "#000002",
+      backgroundColor: preset.color.main,
       width: "100%"
     }}>
       <ThemeProvider theme={theme}>
-        {/* <Typography variant="h4" className={classes.littleSpace} color="primary" styles={{
-          textShadow: "#fe00b2 1px 0 10px"
-        }}>
-          Week 7 ANNOUNCEMENTS
-        </Typography> */}
         <Title>
-          Week 7 ANNOUNCEMENTS
+          Week 3 
+          ANNOUNCEMENTS
         </Title>
         <SubTitle>
-          Wow Time Is Moving Fast
+          Hope Everyone is Healthy and Safe!
         </SubTitle>
-        {/* <Typography varirant="h5" className={classes.grid} color="primary">
-          Wow Time Is Moving Fast
-        </Typography> */}
         
         <Grid>
           <ItemThree>
-            <Message>
+            {/* <Message>
               {message}
-            </Message>
+            </Message> */}
           </ItemThree>
           
           <Row>
@@ -161,8 +150,11 @@ function App() {
                 {text[1]}
               </Text>
               {info[1].map(makeInfo)}
+              <Button href='https://uci.zoom.us/j/92771311576?pwd=OHRVK2pJMWlKYWwwbEh0UGJoZW9JUT09&fbclid=IwAR1S0oIXLudjBDRh93KP5GPudXmRxUBfZJzrd8HDViILTfGV_j2GPSZHm3U#success' style={{color:'#C3073F'}}>Modern 2 Zoom Link</Button>
+              <Button href='https://uci.zoom.us/j/96919812243?pwd=ZFQyR1V3NVlsbzlLbldkeFA1cGltUT09&fbclid=IwAR0jnd9tOEcF-bIL8wdi0grIveXvzXPZJ3jSsUQbw5i_dW5J4-IDgqbN5ns#success' style={{color:'#C3073F'}}>Skit Zoom Link</Button>
+              <Button href='https://uci.zoom.us/j/95475089910?pwd=bmFqeEVCRlVVZ3BOOUo4WFVKWWJPUT09&fbclid=IwAR2Y9hy7w1UdTtfyHYUuEYaiZ8fYTiwSRzLJd_lqb5USp0UmAHhFOw6LXR0#success' style={{color:'#C3073F'}}>Odori Zoom Link</Button>
 
-              <iframe src="https://giphy.com/embed/3ov9jTNQZI2L3M4NB6" maxWidth="200px" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/xbox-3ov9jTNQZI2L3M4NB6">via GIPHY</a></p>
+              {/* <iframe src="https://giphy.com/embed/3ov9jTNQZI2L3M4NB6" maxWidth="200px" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/xbox-3ov9jTNQZI2L3M4NB6">via GIPHY</a></p> */}
             </ItemTwo>
           </Row>
           <Row>
@@ -171,17 +163,15 @@ function App() {
                 {text[2]}
               </Text>
               {info[2].map(makeInfo)}
-              <Simg src={cn}/>
+              <Button href='https://docs.google.com/forms/d/e/1FAIpQLSdh7FKuOESxvHkeuOFQN-hsEYraaafnSZ1HJdhQxfSASXAW1Q/viewform?fbclid=IwAR39IFiCZYW_DxVEr0ZRdjtFQgl2xJmlmkNNVEw_7Qq_lMV7agZW6H5H9Os' style={{color:'#C3073F'}}>Link to Form</Button>
+              <Simg src={cam}/>
             </ItemOne>
             <ItemTwo>
               <Text>
                 {text[3]}
               </Text>
               {info[3].map(makeInfo)}
-              <Simg src={santa}/>
-              <Atag href="https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf-pAJzyx5ulhU2UDmSMEYe4q5KFpAUT6u6Oji1hVsKUZtmzw%2Fviewform%3Ffbclid%3DIwAR1acIoIK3lQ-dteWgr1dD_AkILFJqgsnPgs-F0NzG4lgoa5nK7fIyEKhpc&h=AT3EcSkBD2K5hAA4e-tn6BdsjCIHHwV1NiPyydZZsGOuzUZKxh71O3hMqkqBXxO9yTPPJoPtCo-44eQU9p0lpGd3nhjs1nVXielXqXbQn7e8lFufgagY4VCAr6TMmutlREO1KV1vEQdRf0VtvrRx&__tn__=-UK-R&c[0]=AT3uwj_WvoJ5Pp6iqRsjwJxFaWj46Q1kuLBAawpnLwj8d_Gh4ryTp8C_b_Ar76hnyMbhe2lRy3A30gSnOXkkQqVuZm9UZGbDEhASBeC0xTYX2FNUPBtDdeoqUT4goOzz85PDCamHd1H_jFV50cNa47z5OLAU7jLp3GGPzl8RTeX_9mQkINn-CGrv0nYn-s0JK90XeaAkSPPNJ97kcg">
-                Form here!
-              </Atag>
+              <Simg src={mam}/>
             </ItemTwo>
           </Row>
           <Row>
@@ -190,15 +180,16 @@ function App() {
                 {text[4]}
               </Text>
               {info[4].map(makeInfo)}
+              <Button href='https://uci.zoom.us/j/93607093106#success' style={{color:'#C3073F'}}>Meeting Link Here</Button>
               
             </ItemOne>
-            <ItemTwo>
+            {/* <ItemTwo>
               <Text>
                 {text[5]}
               </Text>
               {info[5].map(makeInfo)}
               <Simg src={curry}/>
-            </ItemTwo>
+            </ItemTwo> */}
           </Row>
         </Grid>
         
